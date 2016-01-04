@@ -9,3 +9,5 @@ Note: this was a weekend project (that took longer than a weekend, but what can 
 - *uno-rx-rh.ino* Code to receive data from the ATTiny85 on the Arduino Uno
 - *bobsrxtx.cpp* Helper functions, most importantly the data struct used for the two microcontrollers
 - *bobsrxtx.h* Header file for above.
+## Updates
+- 160103: Added routine to encrypt the data packet with an XOR cipher.  The two AVR files do not yet implement encryption
