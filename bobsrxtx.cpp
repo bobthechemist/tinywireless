@@ -58,3 +58,21 @@ void packet_status( packet_info &pi, uint8_t counter )
     pi.last = counter;
   }  
 }
+
+/* 
+ Add encryption to the data packet sent.  
+ To use, create a key: char key[] = "my secret"
+ and encrypt the data which has been memcpy'd into a buffer: xor_crypt(buf,key,sizeof(data));
+ Apply the same function on the receiving end to decrypt. 
+ Uses the XOR cipher
+*/
+
+void xor_crypt(byte *buf, char *key, int n)
+{
+  int i, k;
+  k = strlen(key);
+  for (i=0;i<n;i++)
+  {
+    buf[i]=buf[i]^key[i%k];
+  }
+}
