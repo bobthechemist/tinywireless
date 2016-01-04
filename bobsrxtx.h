@@ -27,6 +27,9 @@ struct packet_info {
 };
 
 void packet_status( packet_info &p, uint8_t counter );
+
+// Possible encryption routine
+void xor_crypt(byte *buf, char *key, int n)
   
 
 // Return packet loss information
